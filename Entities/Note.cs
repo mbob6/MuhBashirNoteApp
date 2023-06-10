@@ -1,6 +1,6 @@
 ﻿namespace NoteApp.Entities
 {
-    public class Note
+    public class Note : BaseEntity
     {
         public string Title { get; set; }
         public string Content { get; set; }

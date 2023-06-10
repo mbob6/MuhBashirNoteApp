@@ -1,6 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using NoteApp.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<NoteDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("NoteDbContext")));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
