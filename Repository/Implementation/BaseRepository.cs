@@ -3,7 +3,7 @@ using NoteApp.Repository;
 using NoteApp.Context;
 using System.Linq.Expressions;
 
-namespace E_School.Repository.Implementations
+namespace NoteApp.Repository.Implementations
 {
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity, new()
     {
@@ -60,7 +60,7 @@ namespace E_School.Repository.Implementations
             return _context.Set<T>().ToList();
         }
 
-        public IReadOnlyList<T> SelectAll(Expression<Func<T, bool>> expression = null) // line not understood
+        public IReadOnlyList<T> SelectAll(Expression<Func<T, bool>> expression = null) 
         {
             return _context.Set<T>().Where(expression).ToList();
         }

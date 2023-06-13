@@ -1,6 +1,8 @@
-﻿namespace NoteApp.Repository.Interfaces
+﻿using NoteApp.Entities;
+
+namespace NoteApp.Repository.Interfaces
 {
-    public interface IRoleRepository
+    public interface IRoleRepository : IRepository<Role>
     {
     }
 }
