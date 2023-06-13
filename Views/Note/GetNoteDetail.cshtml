@@ -1,0 +1,44 @@
+﻿@model NoteApp.Models.Note.NoteViewModel
+
+@{
+    ViewData["Title"] = "Note Details";
+}
+
+<div class="body">
+
+    @if (Model is not null)
+    {
+        <dl class="row">
+            <dt class="col-sm-4">
+                Title:
+            </dt>
+
+            <dd class="col-sm-8">
+                @Model.Title
+            </dd>
+
+            <dt class="col-sm-4">
+                Content:
+            </dt>
+
+            <dd class="col-sm-8">
+                @Model.Content
+            </dd>
+        </dl>
+        <br />
+
+        <a asp-controller="Note" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">
+            Update
+        </a>
+
+        <form asp-action="DeleteNote" asp-route-id="@Model.Id" class="del-btn">
+            <button type="submit" class="btn btn-danger">
+                Delete
+            </button>
+        </form>
+
+        <a asp-controller="Note" asp-action="Index" class="btn btn-secondary">
+            Back to list
+        </a>
+    }
+</div>

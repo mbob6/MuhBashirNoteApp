@@ -1,0 +1,33 @@
+﻿@model NoteApp.Models.Note.UpdateNoteViewModel
+@{
+    ViewData["Title"] = "Update Note";
+}
+
+<div class="body">
+
+    @if (Model is not null)
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <form asp-action="Update">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="col-md-12 mb-3" type>
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" type="text" class="form-control" value="@Model.Title" readonly />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" type="text" class="form-control" value="@Model.Content" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</div>

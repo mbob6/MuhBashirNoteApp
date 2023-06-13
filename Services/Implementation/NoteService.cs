@@ -9,7 +9,6 @@ namespace NoteApp.Services.Implementation
     public class NoteService : INoteService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IHttpContextAccessor _contextAccessor;
 
         public NoteService(IUnitOfWork unitOfWork)
         {
@@ -18,7 +17,6 @@ namespace NoteApp.Services.Implementation
         public BaseResponseModel CreateNote(CreateNoteViewModel model)
         {
             var response = new BaseResponseModel();
-            var createdBy = _contextAccessor.HttpContext.User.Identity.Name;
             var noteExist = _unitOfWork.Note.Exists(n => n.Title == model.Title);
 
             if (noteExist)
@@ -32,7 +30,6 @@ namespace NoteApp.Services.Implementation
                 Title = model.Title,
                 Content = model.Content,
                 DateCreated = DateTime.Now,
-                CreatedBy = createdBy,
             };
 
             try

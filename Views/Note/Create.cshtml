@@ -1,0 +1,35 @@
+﻿@model NoteApp.Models.Note.CreateNoteViewModel
+@{
+    ViewData["Title"] = "Create New Note";
+}
+
+<div class="body">
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <form asp-action="Create">
+                <div class="col-md-12 mb-2">
+                    <label asp-for="Title" class="form-label">Title:</label>
+                    <input type="text" class="form-control" placeholder="Enter Title" asp-for="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <label asp-for="Content" class="form-label">Content:</label>
+                    <textarea class="form-control" placeholder="Enter Content" asp-for="Content"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Create Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+@*@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}*@
