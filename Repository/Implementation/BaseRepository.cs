@@ -25,9 +25,9 @@ namespace NoteApp.Repository.Implementations
 
         }
 
-        public T Get(Guid id)
+        public T Get(string id)
         {
-            return _context.Set<T>().Find(id);
+            return _context.Set<T>().Find(id.ToString());
         }
 
         public T Get(Expression<Func<T, bool>> expression)

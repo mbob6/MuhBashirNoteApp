@@ -43,7 +43,7 @@ namespace NoteApp.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
         public IActionResult Login()
         {
@@ -74,7 +74,7 @@ namespace NoteApp.Controllers
             {
                 return RedirectToAction("AdminDashboard", "Home");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
         public IActionResult LogOut()
         {

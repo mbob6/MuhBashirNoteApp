@@ -6,7 +6,7 @@ namespace NoteApp.Repository
     public interface IRepository<T> where T : BaseEntity, new()
     {
         T Create(T entity);
-        T Get(Guid id);
+        T Get(string id);
         T Update(T entity);
         void Remove(T entity);
         List<T> GetAllByIds(List<Guid> ids);

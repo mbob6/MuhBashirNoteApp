@@ -51,7 +51,7 @@ namespace NoteApp.Services.Implementation
         {
             var response = new BaseResponseModel();
             var roleExist = _unitOfWork.Role.Exists(r => id == r.Id);
-            var role = _unitOfWork.Role.Get(id);
+            var role = _unitOfWork.Role.Get(id.ToString());
 
             if (!roleExist)
             {
@@ -125,7 +125,7 @@ namespace NoteApp.Services.Implementation
                     return response;
                 }
 
-                var role = _unitOfWork.Role.Get(id);
+                var role = _unitOfWork.Role.Get(id.ToString());
                 response.Data = new RoleViewModel
                 {
                     Id = id,
@@ -154,7 +154,7 @@ namespace NoteApp.Services.Implementation
                 return response;
             }
 
-            var role = _unitOfWork.Role.Get(id);
+            var role = _unitOfWork.Role.Get(id.ToString());
             role.RoleName = model.RoleName;
             role.Description = model.Description;
             try

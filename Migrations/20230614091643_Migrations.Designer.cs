@@ -11,7 +11,7 @@ using NoteApp.Context;
 namespace NoteApp.Migrations
 {
     [DbContext(typeof(NoteDbContext))]
-    [Migration("20230614080924_Migrations")]
+    [Migration("20230614091643_Migrations")]
     partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,9 @@ namespace NoteApp.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<string>("Content")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CreatedBy")
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("DateCreated")

@@ -3,21 +3,28 @@ using NoteApp.Models;
 using NoteApp.Models.Note;
 using NoteApp.Repository.Interfaces;
 using NoteApp.Services.Interfaces;
+using System.Security.Claims;
 
 namespace NoteApp.Services.Implementation
 {
     public class NoteService : INoteService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IHttpContextAccessor _contextAccessor;
 
-        public NoteService(IUnitOfWork unitOfWork)
+        public NoteService(IUnitOfWork unitOfWork, IHttpContextAccessor contextAccessor)
         {
             _unitOfWork = unitOfWork;
+            _contextAccessor = contextAccessor;
         }
+
         public BaseResponseModel CreateNote(CreateNoteViewModel model)
         {
             var response = new BaseResponseModel();
+            var createdBy = _contextAccessor.HttpContext.User.Identity.Name;
+            var userIdClaim = _contextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
             var noteExist = _unitOfWork.Note.Exists(n => n.Title == model.Title);
+            var user = _unitOfWork.User.Get(userIdClaim);
 
             if (noteExist)
             {
@@ -30,6 +37,7 @@ namespace NoteApp.Services.Implementation
                 Title = model.Title,
                 Content = model.Content,
                 DateCreated = DateTime.Now,
+                UserId = user.Id
             };
 
             try
@@ -50,7 +58,7 @@ namespace NoteApp.Services.Implementation
         public BaseResponseModel DeleteNote(Guid id)
         {
             var response = new BaseResponseModel();
-            var note = _unitOfWork.Note.Get(id);
+            var note = _unitOfWork.Note.Get(id.ToString());
 
             var noteExist = _unitOfWork.Note.Exists(n => (n.Id == id)
                                                 || (note.IsDeleted == true));
@@ -81,7 +89,9 @@ namespace NoteApp.Services.Implementation
         public NotesResponseModel GetAllNotes()
         {
             var response = new NotesResponseModel();
-            var notes = _unitOfWork.Note.GetAll(n => n.IsDeleted == false);
+            var createdBy = _contextAccessor.HttpContext.User.Identity.Name;
+            var notes = _unitOfWork.Note.GetAll(n => (n.IsDeleted == false)
+                                            && (n.CreatedBy == createdBy));
             if (notes.Count == 0)
             {
                 response.Message = "No Records Found ";
@@ -119,7 +129,7 @@ namespace NoteApp.Services.Implementation
                     response.Message = "Note does not exist";
                     return response;
                 }
-                var note = _unitOfWork.Note.Get(id);
+                var note = _unitOfWork.Note.Get(id.ToString());
 
                 response.Data = new NoteViewModel
                 {
@@ -149,7 +159,7 @@ namespace NoteApp.Services.Implementation
                 return response;
             }
 
-            var role = _unitOfWork.Note.Get(id);
+            var role = _unitOfWork.Note.Get(id.ToString());
             role.Title = model.Title;
             role.Content = model.Content;
             role.DateUpdated = DateTime.Now;
