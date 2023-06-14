@@ -12,7 +12,10 @@
             <input type="text" class="form-control" placeholder="Enter UserName" asp-for="UserName">
             <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
-
+        <div class="col-md-6">
+            <label for="PhoneNumber" class="form-label">PhoneNumber</label>
+            <input type="text" class="form-control" placeholder="Enter PhoneNumber" asp-for="PhoneNumber">
+        </div>
         <div class="col-md-6">
             <label asp-for="Email" class="form-label">Email:</label>
             <input asp-for="Email" class="form-control" placeholder="Enter email address" />

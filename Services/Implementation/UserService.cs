@@ -107,6 +107,7 @@ namespace NoteApp.Services.Implementation
                 Email = request.Email,
                 Password = request.Password,
                 PhoneNumber = request.PhoneNumber,
+                RoleId = role.Id,
             };
             try
             {
