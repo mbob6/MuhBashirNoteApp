@@ -1,11 +1,23 @@
-﻿@using System.Security.Claims;
-@{
-    ViewData["Title"] = "Admin Dashboard";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p class="lead">
-        <span class="badge rounded-pill bg-success">@User.Identity.Name</span>
-    </p>
+    <p>Administrtor.</p>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Manage Role</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Role Management System</h6>
+            <a class="card-link" asp-area="" asp-controller="Role" asp-action="Index">Manage Role System</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Notes</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Add, Edit and Delete Note</h6>
+            <a class="card-link" asp-area="" asp-controller="Note" asp-action="Index">Manage Notes System</a>
+        </div>
+    </div>
 </div>
+

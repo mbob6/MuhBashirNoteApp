@@ -43,7 +43,7 @@ namespace NoteApp.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Note");
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult Login()
         {
@@ -54,6 +54,10 @@ namespace NoteApp.Controllers
         public IActionResult Login(LoginViewModel model)
         {
             var response = _userService.Login(model);
+            if(response.Status == false)
+            {
+                return View();
+            }
             var user = response.Data;
             var claims = new List<Claim>
             {
@@ -74,7 +78,7 @@ namespace NoteApp.Controllers
             {
                 return RedirectToAction("AdminDashboard", "Home");
             }
-            return RedirectToAction("Index", "Note");
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult LogOut()
         {
