@@ -27,7 +27,7 @@ namespace NoteApp.Repository.Implementations
 
         public T Get(string id)
         {
-            return _context.Set<T>().Find(id.ToString());
+            return _context.Set<T>().Find(id);
         }
 
         public T Get(Expression<Func<T, bool>> expression)
@@ -45,7 +45,7 @@ namespace NoteApp.Repository.Implementations
             return _context.Set<T>().Where(expression).ToList();
         }
 
-        public List<T> GetAllByIds(List<Guid> ids)
+        public List<T> GetAllByIds(List<string> ids)
         {
             return _context.Set<T>().Where(t => ids.Contains(t.Id)).ToList();
         }

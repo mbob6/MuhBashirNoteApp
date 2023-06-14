@@ -9,7 +9,7 @@ namespace NoteApp.Repository
         T Get(string id);
         T Update(T entity);
         void Remove(T entity);
-        List<T> GetAllByIds(List<Guid> ids);
+        List<T> GetAllByIds(List<string> ids);
         T Get(Expression<Func<T, bool>> expression);
         List<T> GetAll();
         List<T> GetAll(Expression<Func<T, bool>> expression = null);

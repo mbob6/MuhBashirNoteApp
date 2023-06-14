@@ -18,7 +18,7 @@ namespace NoteApp.Services.Implementation
             _contextAccessor = contextAccessor;
         }
 
-        public UserResponseModel GetUser(Guid userId)
+        public UserResponseModel GetUser(string userId)
         {
             var response = new UserResponseModel();
             var user = _unitOfWork.User.GetUser(u => u.Id == userId);

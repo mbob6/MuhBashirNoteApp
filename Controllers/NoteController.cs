@@ -41,7 +41,7 @@ namespace NoteApp.Controllers
             return RedirectToAction("Index", "Note");
         }
 
-        public IActionResult GetNoteDetail(Guid id)
+        public IActionResult GetNoteDetail(string id)
         {
             var response = _noteService.GetNote(id);
 
@@ -53,7 +53,7 @@ namespace NoteApp.Controllers
             return View(response.Data);
         }
 
-        public IActionResult Update(Guid id)
+        public IActionResult Update(string id)
         {
             var response = _noteService.GetNote(id);
 
@@ -73,7 +73,7 @@ namespace NoteApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Guid id, UpdateNoteViewModel request)
+        public IActionResult Update(string id, UpdateNoteViewModel request)
         {
             var response = _noteService.UpdateNote(id, request);
 
@@ -86,7 +86,7 @@ namespace NoteApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteNote([FromRoute] Guid id)
+        public IActionResult DeleteNote([FromRoute] string id)
         {
             var response = _noteService.GetNote(id);
 

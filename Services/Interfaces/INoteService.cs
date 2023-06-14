@@ -7,9 +7,9 @@ namespace NoteApp.Services.Interfaces
     public interface INoteService
     {
         public BaseResponseModel CreateNote(CreateNoteViewModel model);
-        public BaseResponseModel UpdateNote(Guid id, UpdateNoteViewModel model);
-        public BaseResponseModel DeleteNote(Guid id);
-        public NoteResponseModel GetNote(Guid id);
+        public BaseResponseModel UpdateNote(string id, UpdateNoteViewModel model);
+        public BaseResponseModel DeleteNote(string id);
+        public NoteResponseModel GetNote(string id);
         public NotesResponseModel GetAllNotes();
     }
 }

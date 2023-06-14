@@ -1,8 +1,9 @@
-﻿namespace NoteApp.Entities
+﻿using MassTransit;
+namespace NoteApp.Entities
 {
     public class BaseEntity
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; } = NewId.Next().ToSequentialGuid().ToString();
         public bool IsDeleted { get; set; }
     }
 }

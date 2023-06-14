@@ -42,7 +42,7 @@ namespace NoteApp.Controllers
             return RedirectToAction("Index", "Role");
         }
 
-        public IActionResult GetRoleDetail(Guid id)
+        public IActionResult GetRoleDetail(string id)
         {
             var response = _roleService.GetRole(id);
 
@@ -54,7 +54,7 @@ namespace NoteApp.Controllers
             return View(response.Data);
         }
 
-        public IActionResult Update(Guid id)
+        public IActionResult Update(string id)
         {
             var response = _roleService.GetRole(id);
 
@@ -74,7 +74,7 @@ namespace NoteApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Guid id, UpdateRoleViewModel request)
+        public IActionResult Update(string id, UpdateRoleViewModel request)
         {
             var response = _roleService.UpdateRole(id, request);
 
@@ -87,7 +87,7 @@ namespace NoteApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteRole([FromRoute] Guid id)
+        public IActionResult DeleteRole([FromRoute] string id)
         {
             var response = _roleService.DeleteRole(id);
 

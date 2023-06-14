@@ -37,7 +37,8 @@ namespace NoteApp.Services.Implementation
                 Title = model.Title,
                 Content = model.Content,
                 DateCreated = DateTime.Now,
-                UserId = user.Id
+                UserId = user.Id,
+                CreatedBy = createdBy
             };
 
             try
@@ -55,7 +56,7 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        public BaseResponseModel DeleteNote(Guid id)
+        public BaseResponseModel DeleteNote(string id)
         {
             var response = new BaseResponseModel();
             var note = _unitOfWork.Note.Get(id.ToString());
@@ -117,7 +118,7 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        public NoteResponseModel GetNote(Guid id)
+        public NoteResponseModel GetNote(string id)
         {
             var response = new NoteResponseModel();
             try
@@ -149,7 +150,7 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        public BaseResponseModel UpdateNote(Guid id, UpdateNoteViewModel model)
+        public BaseResponseModel UpdateNote(string id, UpdateNoteViewModel model)
         {
             var response = new BaseResponseModel();
             var noteExist = _unitOfWork.Note.Exists(n => (n.Id == id)  && (n.IsDeleted == false));

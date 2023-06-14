@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BqZWQv2aVxgqz5G/UMzGo8ZPV5GFq62p7UPvUMnVCTxG3pOvtwU8TUdu/EunFYxdslnkS3B4lz9snukIDQz7qQ==",
+  "dgSpecHash": "aeUuOsrQKl5gmcJEvXZ5Gn/YSjJNSm9bjVOkOZhhFvvWqGsQwd7LyiPrIDXiWEl3zz5rMeNisEL6/BHEoX34yQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\my\\Documents\\Projects\\NoteApp\\NoteApp.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\my\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\mysql.data\\8.0.32\\mysql.data.8.0.32.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.10\\mysql.entityframeworkcore.6.0.10.nupkg.sha512",
+    "C:\\Users\\my\\.nuget\\packages\\newid\\4.0.1\\newid.4.0.1.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.13",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.13",
-          "MySql.EntityFrameworkCore": "6.0.10"
+          "MySql.EntityFrameworkCore": "6.0.10",
+          "NewId": "4.0.1"
         },
         "runtime": {
           "NoteApp.dll": {}
@@ -249,6 +250,14 @@
           "lib/net6.0/MySql.EntityFrameworkCore.dll": {
             "assemblyVersion": "6.0.10.0",
             "fileVersion": "6.0.10.0"
+          }
+        }
+      },
+      "NewId/4.0.1": {
+        "runtime": {
+          "lib/net6.0/NewId.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
           }
         }
       },
@@ -603,6 +612,13 @@
       "sha512": "sha512-mm7iZ+RkaVGpOTNLSvfRmWZkOOr1LjejvXJgkrDBjJNtnI78HwTOkXavLD1xZ9cSLqqQvKr9QCP1McTOA/n4ng==",
       "path": "mysql.entityframeworkcore/6.0.10",
       "hashPath": "mysql.entityframeworkcore.6.0.10.nupkg.sha512"
+    },
+    "NewId/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jegBasNndmG21G3BmT51suFDCIz/sLN81j+IxmkZ4iWoaDi8LygeHiyNnYbXz5OQh9nCRJFIx1+PJrlYi1Gc9Q==",
+      "path": "newid/4.0.1",
+      "hashPath": "newid.4.0.1.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

@@ -6,9 +6,9 @@ namespace NoteApp.Services.Interfaces
     public interface IRoleService
     {
         public BaseResponseModel CreateRole(CreateRoleViewModel model);
-        public BaseResponseModel UpdateRole(Guid id, UpdateRoleViewModel model);
-        public BaseResponseModel DeleteRole(Guid id);
-        public RoleResponseModel GetRole(Guid id );
+        public BaseResponseModel UpdateRole(string id, UpdateRoleViewModel model);
+        public BaseResponseModel DeleteRole(string id);
+        public RoleResponseModel GetRole(string id );
         public RolesResponseModel GetAllRoles();
     }
 }

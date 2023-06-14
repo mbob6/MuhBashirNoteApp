@@ -47,7 +47,7 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        public BaseResponseModel DeleteRole(Guid id)
+        public BaseResponseModel DeleteRole(string id)
         {
             var response = new BaseResponseModel();
             var roleExist = _unitOfWork.Role.Exists(r => id == r.Id);
@@ -111,7 +111,7 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        public RoleResponseModel GetRole(Guid id)
+        public RoleResponseModel GetRole(string id)
         {
             var response = new RoleResponseModel();
 
@@ -143,7 +143,7 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        public BaseResponseModel UpdateRole(Guid id, UpdateRoleViewModel model)
+        public BaseResponseModel UpdateRole(string id, UpdateRoleViewModel model)
         {
             var response = new BaseResponseModel();
             var roleExist = _unitOfWork.Role.Exists(r => (r.Id == id) 

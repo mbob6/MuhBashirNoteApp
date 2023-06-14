@@ -4,7 +4,7 @@
     {
         public string UserName { get; set; }
         public Role Role { get; set; }
-        public Guid RoleId { get; set; }
+        public string RoleId { get; set; }
         public string Email { get; set; }
         public ICollection<Note> Notes { get; set; } = new HashSet<Note>();
         public string PhoneNumber { get; set; }

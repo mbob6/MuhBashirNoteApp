@@ -57,6 +57,10 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "NewId": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             }
           },
           "imports": [

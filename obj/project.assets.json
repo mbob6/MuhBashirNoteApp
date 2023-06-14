@@ -427,6 +427,19 @@
           }
         }
       },
+      "NewId/4.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/NewId.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/NewId.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -1325,6 +1338,21 @@
         "lib/net6.0/MySql.EntityFrameworkCore.xml",
         "mysql.entityframeworkcore.6.0.10.nupkg.sha512",
         "mysql.entityframeworkcore.nuspec"
+      ]
+    },
+    "NewId/4.0.1": {
+      "sha512": "jegBasNndmG21G3BmT51suFDCIz/sLN81j+IxmkZ4iWoaDi8LygeHiyNnYbXz5OQh9nCRJFIx1+PJrlYi1Gc9Q==",
+      "type": "package",
+      "path": "newid/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/NewId.dll",
+        "lib/net6.0/NewId.xml",
+        "lib/netstandard2.0/NewId.dll",
+        "lib/netstandard2.0/NewId.xml",
+        "newid.4.0.1.nupkg.sha512",
+        "newid.nuspec"
       ]
     },
     "Portable.BouncyCastle/1.9.0": {
@@ -2250,7 +2278,8 @@
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.13",
-      "MySql.EntityFrameworkCore >= 6.0.10"
+      "MySql.EntityFrameworkCore >= 6.0.10",
+      "NewId >= 4.0.1"
     ]
   },
   "packageFolders": {
@@ -2310,6 +2339,10 @@
           "MySql.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.10, )"
+          },
+          "NewId": {
+            "target": "Package",
+            "version": "[4.0.1, )"
           }
         },
         "imports": [

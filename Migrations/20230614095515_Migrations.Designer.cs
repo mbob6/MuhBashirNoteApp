@@ -11,7 +11,7 @@ using NoteApp.Context;
 namespace NoteApp.Migrations
 {
     [DbContext(typeof(NoteDbContext))]
-    [Migration("20230614091643_Migrations")]
+    [Migration("20230614095515_Migrations")]
     partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,9 +23,8 @@ namespace NoteApp.Migrations
 
             modelBuilder.Entity("NoteApp.Entities.Note", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Content")
                         .HasColumnType("longtext");
@@ -45,8 +44,8 @@ namespace NoteApp.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("longtext");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -57,9 +56,8 @@ namespace NoteApp.Migrations
 
             modelBuilder.Entity("NoteApp.Entities.Role", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime(6)");
@@ -83,9 +81,8 @@ namespace NoteApp.Migrations
 
             modelBuilder.Entity("NoteApp.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime>("DateJoined")
                         .HasColumnType("datetime(6)");
@@ -102,8 +99,8 @@ namespace NoteApp.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("longtext");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("UserName")
                         .HasColumnType("longtext");
@@ -119,9 +116,7 @@ namespace NoteApp.Migrations
                 {
                     b.HasOne("NoteApp.Entities.User", "User")
                         .WithMany("Notes")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -130,9 +125,7 @@ namespace NoteApp.Migrations
                 {
                     b.HasOne("NoteApp.Entities.Role", "Role")
                         .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoleId");
 
                     b.Navigation("Role");
                 });

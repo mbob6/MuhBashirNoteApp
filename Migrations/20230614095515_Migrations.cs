@@ -16,7 +16,7 @@ namespace NoteApp.Migrations
                 name: "Roles",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false),
                     RoleName = table.Column<string>(type: "longtext", nullable: true),
                     Description = table.Column<string>(type: "longtext", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -33,9 +33,9 @@ namespace NoteApp.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false),
                     UserName = table.Column<string>(type: "longtext", nullable: true),
-                    RoleId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    RoleId = table.Column<string>(type: "varchar(255)", nullable: true),
                     Email = table.Column<string>(type: "longtext", nullable: true),
                     PhoneNumber = table.Column<string>(type: "longtext", nullable: true),
                     Password = table.Column<string>(type: "longtext", nullable: true),
@@ -49,8 +49,7 @@ namespace NoteApp.Migrations
                         name: "FK_Users_Roles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Roles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -58,10 +57,10 @@ namespace NoteApp.Migrations
                 name: "Notes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false),
                     Title = table.Column<string>(type: "longtext", nullable: true),
                     Content = table.Column<string>(type: "longtext", nullable: true),
-                    UserId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -74,8 +73,7 @@ namespace NoteApp.Migrations
                         name: "FK_Notes_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
