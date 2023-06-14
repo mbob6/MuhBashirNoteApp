@@ -61,7 +61,6 @@ namespace NoteApp.Controllers
                 new Claim(ClaimTypes.GivenName, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.RoleName),
                 new Claim(ClaimTypes.MobilePhone, user.PhoneNumber)
             };
 
