@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using NoteApp.Context;
 using NoteApp.Repository.Implementation;
@@ -18,8 +19,26 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<INoteRepository, NoteRepository>();
 builder.Services.AddScoped<INoteService, NoteService>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<DbInitiaizer>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+               .AddCookie(config =>
+               {
+                   config.LoginPath = "/home/login";
+                   config.Cookie.Name = "NoteApp";
+                   config.ExpireTimeSpan = TimeSpan.FromDays(1);
+                   config.AccessDeniedPath = "/home/privacy";
+               });
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var dbContext = services.GetRequiredService<NoteDbContext>();
+
+    // Apply database initialization
+    DbInitiaizer.Initialize(dbContext);
+}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -31,7 +50,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseAuthentication();
 app.UseRouting();
 
 app.UseAuthorization();

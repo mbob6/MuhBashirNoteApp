@@ -11,7 +11,7 @@ using NoteApp.Context;
 namespace NoteApp.Migrations
 {
     [DbContext(typeof(NoteDbContext))]
-    [Migration("20230610091955_Migrations")]
+    [Migration("20230614080924_Migrations")]
     partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,17 +87,11 @@ namespace NoteApp.Migrations
                     b.Property<DateTime>("DateJoined")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("Dob")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Password")
                         .HasColumnType("longtext");
@@ -108,6 +102,9 @@ namespace NoteApp.Migrations
                     b.Property<Guid>("RoleId")
                         .HasColumnType("char(36)");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
@@ -117,11 +114,13 @@ namespace NoteApp.Migrations
 
             modelBuilder.Entity("NoteApp.Entities.Note", b =>
                 {
-                    b.HasOne("NoteApp.Entities.User", null)
+                    b.HasOne("NoteApp.Entities.User", "User")
                         .WithMany("Notes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("NoteApp.Entities.User", b =>

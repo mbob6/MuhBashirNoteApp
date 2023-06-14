@@ -34,8 +34,7 @@ namespace NoteApp.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
-                    Name = table.Column<string>(type: "longtext", nullable: true),
-                    Dob = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    UserName = table.Column<string>(type: "longtext", nullable: true),
                     RoleId = table.Column<Guid>(type: "char(36)", nullable: false),
                     Email = table.Column<string>(type: "longtext", nullable: true),
                     PhoneNumber = table.Column<string>(type: "longtext", nullable: true),
