@@ -7,6 +7,7 @@ using NoteApp.Models.Auth;
 using NoteApp.Services.Interfaces;
 using System.Diagnostics;
 using System.Security.Claims;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace NoteApp.Controllers
 {
@@ -14,11 +15,12 @@ namespace NoteApp.Controllers
     {
         private readonly IUserService _userService;
         private readonly INoteService _noteService;
-
-        public HomeController(IUserService userService, INoteService noteService)
+        private readonly INotyfService _notyf;
+        public HomeController(IUserService userService, INoteService noteService, INotyfService notyf)
         {
             _userService = userService;
             _noteService = noteService;
+            _notyf = notyf;
         }
         [Authorize]
         public IActionResult Index()
@@ -56,6 +58,7 @@ namespace NoteApp.Controllers
             var response = _userService.Login(model);
             if(response.Status == false)
             {
+                _notyf.Error(response.Message);
                 return View();
             }
             var user = response.Data;
@@ -73,7 +76,7 @@ namespace NoteApp.Controllers
             var principal = new ClaimsPrincipal(claimsIdentity);
 
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authenticationProperties);
-
+            _notyf.Success(response.Message);
             if (user.RoleName == "Admin")
             {
                 return RedirectToAction("AdminDashboard", "Home");

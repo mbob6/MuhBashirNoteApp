@@ -6,7 +6,7 @@ using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace NoteApp.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         private readonly IRoleService _roleService;
@@ -40,11 +40,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
-                _notyf.Error(response.Message);
+                _notyf.Error(response.Message, 10);
                 return View(request);
             }
             
-            _notyf.Success(response.Message);
+            _notyf.Success(response.Message, 10);
             return RedirectToAction("Index", "Role");
         }
 
