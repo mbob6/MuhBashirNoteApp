@@ -42,9 +42,12 @@ namespace NoteApp.Controllers
 
             if (response.Status == false)
             {
+                _notyf.Error(response.Message);
+
                 return View();
             }
 
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Home");
         }
         public IActionResult Login()
@@ -77,7 +80,9 @@ namespace NoteApp.Controllers
             var principal = new ClaimsPrincipal(claimsIdentity);
 
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authenticationProperties);
+
             _notyf.Success(response.Message);
+
             if (user.RoleName == "Admin")
             {
                 return RedirectToAction("AdminDashboard", "Home");
@@ -87,6 +92,8 @@ namespace NoteApp.Controllers
         public IActionResult LogOut()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            _notyf.Success("You Have succesfully log out!");
             return RedirectToAction("Login", "Home");
         }
         public IActionResult Privacy()

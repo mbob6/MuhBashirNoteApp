@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NoteApp.Models.Note;
 using NoteApp.Services.Interfaces;
@@ -9,10 +10,11 @@ namespace NoteApp.Controllers
     public class NoteController : Controller
     {
         private readonly INoteService _noteService;
-
-        public NoteController(INoteService noteService)
+        private readonly INotyfService _notyf;
+        public NoteController(INoteService noteService, INotyfService notyf)
         {
             _noteService = noteService;
+            _notyf = notyf;
         }
         public IActionResult Create()
         {
@@ -26,9 +28,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return View(request);
             }
 
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Home");
         }
 
@@ -38,9 +42,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return RedirectToAction("Index", "Home");
             }
 
+            _notyf.Success(response.Message);
             return View(response.Data);
         }
 
@@ -50,6 +56,7 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -70,8 +77,10 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return View(request);
             }
+            _notyf.Success(response.Message);
 
             return RedirectToAction("Index", "Home");
         }
@@ -83,9 +92,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return RedirectToAction("Index", "Home"); ;
             }
 
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Home");
         }
     }

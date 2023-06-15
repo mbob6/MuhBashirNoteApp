@@ -40,11 +40,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
-                _notyf.Error(response.Message, 10);
+                _notyf.Error(response.Message);
                 return View(request);
             }
             
-            _notyf.Success(response.Message, 10);
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Role");
         }
 
@@ -54,9 +54,10 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return RedirectToAction("Index", "Role");
             }
-
+            _notyf.Success(response.Message);
             return View(response.Data);
         }
 
@@ -66,6 +67,7 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return RedirectToAction("Index", "Role");
             }
 
@@ -86,9 +88,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return View(request);
             }
 
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Role");
         }
 
@@ -99,9 +103,10 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return RedirectToAction("Index", "Role"); ;
             }
-
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Role");
         }
     }
