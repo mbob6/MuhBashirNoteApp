@@ -23,7 +23,8 @@ namespace NoteApp.Services.Implementation
             var response = new BaseResponseModel();
             var createdBy = _contextAccessor.HttpContext.User.Identity.Name;
             var userIdClaim = _contextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
-            var noteExist = _unitOfWork.Note.Exists(n => n.Title == model.Title);
+            var noteExist = _unitOfWork.Note.Exists(n => (n.Title == model.Title)
+                                                        && (n.CreatedBy == createdBy));
             var user = _unitOfWork.User.Get(userIdClaim);
 
             if (noteExist)
@@ -102,6 +103,7 @@ namespace NoteApp.Services.Implementation
             {
                 response.Data = notes.Select(n => new NoteViewModel
                 {
+                    Id = n.Id,
                     Title = n.Title,
                     Content = n.Content,
                     DateCreated = n.DateCreated,
@@ -130,7 +132,7 @@ namespace NoteApp.Services.Implementation
                     response.Message = "Note does not exist";
                     return response;
                 }
-                var note = _unitOfWork.Note.Get(id.ToString());
+                var note = _unitOfWork.Note.Get(id);
 
                 response.Data = new NoteViewModel
                 {
@@ -160,7 +162,7 @@ namespace NoteApp.Services.Implementation
                 return response;
             }
 
-            var role = _unitOfWork.Note.Get(id.ToString());
+            var role = _unitOfWork.Note.Get(id);
             role.Title = model.Title;
             role.Content = model.Content;
             role.DateUpdated = DateTime.Now;

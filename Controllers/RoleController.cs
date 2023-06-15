@@ -2,15 +2,19 @@
 using NoteApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace NoteApp.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         private readonly IRoleService _roleService;
+        private readonly INotyfService _notyf;
 
-        public RoleController(IRoleService roleService)
+        public RoleController(IRoleService roleService, INotyfService notyf)
         {
+            _notyf = notyf;
             _roleService = roleService;
         }
 
@@ -36,9 +40,11 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
+                _notyf.Error(response.Message);
                 return View(request);
             }
-
+            
+            _notyf.Success(response.Message);
             return RedirectToAction("Index", "Role");
         }
 

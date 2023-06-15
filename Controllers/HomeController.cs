@@ -65,7 +65,7 @@ namespace NoteApp.Controllers
                 new Claim(ClaimTypes.GivenName, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.MobilePhone, user.PhoneNumber)
+                new Claim(ClaimTypes.MobilePhone, user.PhoneNumber),
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -89,7 +89,7 @@ namespace NoteApp.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult AdminDashBoard()
         {
             return View();

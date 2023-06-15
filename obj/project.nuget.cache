@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aeUuOsrQKl5gmcJEvXZ5Gn/YSjJNSm9bjVOkOZhhFvvWqGsQwd7LyiPrIDXiWEl3zz5rMeNisEL6/BHEoX34yQ==",
+  "dgSpecHash": "Gdhchg6eWK9+D3740Jm+ju824evQcRJlgPh4LTxDFTQTQfTYwwgcbFCscCeKCSfQW5fiahblLidpuap/nBJn8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\my\\Documents\\Projects\\NoteApp\\NoteApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\my\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
@@ -30,6 +31,7 @@
     "C:\\Users\\my\\.nuget\\packages\\mysql.data\\8.0.32\\mysql.data.8.0.32.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.10\\mysql.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\newid\\4.0.1\\newid.4.0.1.nupkg.sha512",
+    "C:\\Users\\my\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\my\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

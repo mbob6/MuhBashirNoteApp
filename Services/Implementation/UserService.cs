@@ -69,6 +69,8 @@ namespace NoteApp.Services.Implementation
                     Email = user.Email,
                     PhoneNumber = user.PhoneNumber,
                     DateJoined = user.DateJoined,
+                    RoleId = user.RoleId,
+                    RoleName = user.Role.RoleName
                 };
                 response.Message = "Login Successful";
                 response.Status = true;

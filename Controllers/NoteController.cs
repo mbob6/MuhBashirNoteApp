@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NoteApp.Models.Note;
 using NoteApp.Services.Interfaces;
 
 namespace NoteApp.Controllers
 {
+    [Authorize]
     public class NoteController : Controller
     {
         private readonly INoteService _noteService;
@@ -12,17 +14,6 @@ namespace NoteApp.Controllers
         {
             _noteService = noteService;
         }
-
-        public IActionResult Index()
-        {
-            var notes = _noteService.GetAllNotes();
-
-            ViewData["Message"] = notes.Message;
-            ViewData["Status"] = notes.Status;
-
-            return View(notes.Data);
-        }
-
         public IActionResult Create()
         {
             return View();
@@ -38,7 +29,7 @@ namespace NoteApp.Controllers
                 return View(request);
             }
 
-            return RedirectToAction("Index", "Note");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult GetNoteDetail(string id)
@@ -47,7 +38,7 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
-                return RedirectToAction("Index", "Note");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(response.Data);
@@ -59,7 +50,7 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
-                return RedirectToAction("Index", "Note");
+                return RedirectToAction("Index", "Home");
             }
 
             var viewModel = new UpdateNoteViewModel
@@ -82,7 +73,7 @@ namespace NoteApp.Controllers
                 return View(request);
             }
 
-            return RedirectToAction("Index", "Note");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -92,10 +83,10 @@ namespace NoteApp.Controllers
 
             if (response.Status is false)
             {
-                return RedirectToAction("Index", "Note"); ;
+                return RedirectToAction("Index", "Home"); ;
             }
 
-            return RedirectToAction("Index", "Note");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

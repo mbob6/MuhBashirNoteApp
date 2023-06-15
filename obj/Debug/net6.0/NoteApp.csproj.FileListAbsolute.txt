@@ -62,3 +62,7 @@ C:\Users\my\Documents\Projects\NoteApp\obj\Debug\net6.0\NoteApp.pdb
 C:\Users\my\Documents\Projects\NoteApp\obj\Debug\net6.0\NoteApp.genruntimeconfig.cache
 C:\Users\my\Documents\Projects\NoteApp\obj\Debug\net6.0\ref\NoteApp.dll
 C:\Users\my\Documents\Projects\NoteApp\bin\Debug\net6.0\NewId.dll
+C:\Users\my\Documents\Projects\NoteApp\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
+C:\Users\my\Documents\Projects\NoteApp\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+C:\Users\my\Documents\Projects\NoteApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\my\Documents\Projects\NoteApp\obj\Debug\net6.0\NoteApp.MvcApplicationPartsAssemblyInfo.cs
