@@ -63,7 +63,7 @@ namespace NoteApp.Services.Implementation
             var note = _unitOfWork.Note.Get(id.ToString());
 
             var noteExist = _unitOfWork.Note.Exists(n => (n.Id == id)
-                                                || (note.IsDeleted == true));
+                                                && (n.IsDeleted == false));
             if (!noteExist)
             {
                 response.Message = "Note Does not exist";

@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "NToastNotify": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "NewId": {
               "target": "Package",
               "version": "[4.0.1, )"

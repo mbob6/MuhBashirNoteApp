@@ -1,4 +1,5 @@
 using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using NoteApp.Context;
@@ -6,6 +7,7 @@ using NoteApp.Repository.Implementation;
 using NoteApp.Repository.Interfaces;
 using NoteApp.Services.Implementation;
 using NoteApp.Services.Interfaces;
+using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +33,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                });
 builder.Services.AddNotyf(config =>
 {
-    config.DurationInSeconds = 10;
+    config.DurationInSeconds = 5;
     config.IsDismissable = true;
     config.Position = NotyfPosition.TopRight;
 });
@@ -59,7 +61,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseRouting();
-
+app.UseNotyf();
 app.UseAuthorization();
 
 app.MapControllerRoute(

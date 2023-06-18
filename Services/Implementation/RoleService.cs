@@ -18,7 +18,8 @@ namespace NoteApp.Services.Implementation
         public BaseResponseModel CreateRole(CreateRoleViewModel model)
         {
             var response = new BaseResponseModel();
-            var roleExist = _unitOfWork.Role.Exists(r => model.RoleName == r.RoleName);
+            var roleExist = _unitOfWork.Role.Exists(r => (model.RoleName == r.RoleName)
+                                                && (r.IsDeleted == false));
 
             if (roleExist)
             {

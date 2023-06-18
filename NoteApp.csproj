@@ -13,6 +13,7 @@
 		</PackageReference>
 		<PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.10" />
 		<PackageReference Include="NewId" Version="4.0.1" />
+		<PackageReference Include="NToastNotify" Version="8.0.0" />
 	</ItemGroup>
 
 </Project>
