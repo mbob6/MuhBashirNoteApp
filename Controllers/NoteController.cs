@@ -16,6 +16,15 @@ namespace NoteApp.Controllers
             _noteService = noteService;
             _notyf = notyf;
         }
+        [Authorize]
+        public IActionResult Index()
+        {
+            var notes = _noteService.GetAllNotes();
+            ViewData["Message"] = notes.Message;
+            ViewData["Status"] = notes.Status;
+
+            return View(notes.Data);
+        }
         public IActionResult Create()
         {
             return View();
@@ -33,7 +42,7 @@ namespace NoteApp.Controllers
             }
 
             _notyf.Success(response.Message);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
 
         public IActionResult GetNoteDetail(string id)
@@ -43,7 +52,7 @@ namespace NoteApp.Controllers
             if (response.Status is false)
             {
                 _notyf.Error(response.Message);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Note");
             }
 
             _notyf.Success(response.Message);
@@ -57,7 +66,7 @@ namespace NoteApp.Controllers
             if (response.Status is false)
             {
                 _notyf.Error(response.Message);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Note");
             }
 
             var viewModel = new UpdateNoteViewModel
@@ -82,22 +91,22 @@ namespace NoteApp.Controllers
             }
             _notyf.Success(response.Message);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
 
         [HttpPost]
         public IActionResult DeleteNote([FromRoute] string id)
         {
-            var response = _noteService.GetNote(id);
+            var response = _noteService.DeleteNote(id);
 
             if (response.Status is false)
             {
                 _notyf.Error(response.Message);
-                return RedirectToAction("Index", "Home"); ;
+                return RedirectToAction("Index", "Note"); ;
             }
 
             _notyf.Success(response.Message);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
     }
 }

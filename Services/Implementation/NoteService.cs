@@ -60,7 +60,7 @@ namespace NoteApp.Services.Implementation
         public BaseResponseModel DeleteNote(string id)
         {
             var response = new BaseResponseModel();
-            var note = _unitOfWork.Note.Get(id.ToString());
+            var note = _unitOfWork.Note.Get(id);
 
             var noteExist = _unitOfWork.Note.Exists(n => (n.Id == id)
                                                 && (n.IsDeleted == false));

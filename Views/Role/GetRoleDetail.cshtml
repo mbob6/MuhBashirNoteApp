@@ -35,17 +35,17 @@
         }
         else
         {
-            <a asp-controller="Role" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">
+            <a asp-controller="Role" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary mb-3">
                 Update
             </a>
 
             <form asp-action="DeleteRole" asp-route-id="@Model.Id" class="del-btn">
-                <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger mb-3">
                     Delete
                 </button>
             </form>
 
-            <a asp-controller="Role" asp-action="Index" class="btn btn-secondary">
+            <a asp-controller="Role" asp-action="Index" class="btn btn-secondary mb-3">
                 Back to list
             </a>
         }

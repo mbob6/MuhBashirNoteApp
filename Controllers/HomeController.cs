@@ -22,15 +22,7 @@ namespace NoteApp.Controllers
             _noteService = noteService;
             _notyf = notyf;
         }
-        [Authorize]
-        public IActionResult Index()
-        {
-            var notes = _noteService.GetAllNotes();
-            ViewData["Message"] = notes.Message;
-            ViewData["Status"] = notes.Status;
-
-            return View(notes.Data);
-        }
+       
         public IActionResult SignUp()
         {
             return View();
@@ -48,7 +40,7 @@ namespace NoteApp.Controllers
             }
 
             _notyf.Success(response.Message);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
         public IActionResult Login()
         {
@@ -86,7 +78,7 @@ namespace NoteApp.Controllers
             {
                 return RedirectToAction("AdminDashboard", "Home");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Note");
         }
         public IActionResult LogOut()
         {

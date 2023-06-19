@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NoteApp
 build_property.RootNamespace = NoteApp
-build_property.ProjectDir = C:\Users\my\Documents\Projects\NoteApp\
+build_property.ProjectDir = c:\Users\my\Documents\Projects\NoteApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\my\Documents\Projects\NoteApp
+build_property.MSBuildProjectDirectory = c:\Users\my\Documents\Projects\NoteApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Home/AdminDashboard.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Home/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/my/Documents/Projects/NoteApp/Views/Home/Login.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Home/Privacy.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Home/SignUp.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Home/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Note/Create.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Note/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Note/GetNoteDetail.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Note/GetNoteDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxHZXROb3RlRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Note/Update.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Note/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/my/Documents/Projects/NoteApp/Views/Note/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Role/Create.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Role/GetRoleDetail.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Role/GetRoleDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxHZXRSb2xlRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Role/Index.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Role/Update.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Role/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Shared/Error.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/_ViewImports.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/_ViewStart.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/my/Documents/Projects/NoteApp/Views/Shared/_Layout.cshtml]
+[c:/Users/my/Documents/Projects/NoteApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zvhqmx0aa1
