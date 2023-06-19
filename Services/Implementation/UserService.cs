@@ -48,17 +48,12 @@ namespace NoteApp.Services.Implementation
 
             try
             {
-                var user = _unitOfWork.User.GetUser(u => (u.UserName.ToLower() == request.UserName.ToLower())
-                                                    || (u.Password.ToLower() == request.Password.ToLower()));
+                var user = _unitOfWork.User.GetUser(u =>
+                    u.UserName.ToLower() == request.UserName.ToLower() && u.Password.ToLower() == request.Password.ToLower());
+
                 if (user == null)
                 {
                     response.Message = "Account does not exist";
-                    return response;
-                }
-
-                if (request.Password != user.Password)
-                {
-                    response.Message = "Incorrect Username or Password";
                     return response;
                 }
 
@@ -78,10 +73,11 @@ namespace NoteApp.Services.Implementation
             }
             catch (Exception ex)
             {
-                response.Message = $"An error occured : {ex.Message}";
+                response.Message = $"An error occurred: {ex.Message}";
                 return response;
             }
         }
+
 
         public BaseResponseModel Register(SignUpViewModel request, string roleName = null)
         {

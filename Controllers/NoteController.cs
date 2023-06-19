@@ -16,7 +16,6 @@ namespace NoteApp.Controllers
             _noteService = noteService;
             _notyf = notyf;
         }
-        [Authorize]
         public IActionResult Index()
         {
             var notes = _noteService.GetAllNotes();
