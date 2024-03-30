@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using NoteApp.Models;
-using NoteApp.Models.Auth;
-using NoteApp.Services.Interfaces;
+﻿using NoteApp.Models;
 using System.Diagnostics;
+using NoteApp.Models.Auth;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
+using NoteApp.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace NoteApp.Controllers
