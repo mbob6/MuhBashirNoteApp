@@ -1,4 +1,5 @@
-﻿using NoteApp.Entities;
+﻿using Microsoft.AspNetCore.Mvc;
+using NoteApp.Entities;
 using NoteApp.Models;
 using NoteApp.Models.Note;
 using NoteApp.Repository.Interfaces;
@@ -85,15 +86,21 @@ namespace NoteApp.Services.Implementation
                 response.Message = $"Unable to delete Note : {ex.Message}";
                 return response;
             }
-            
+
         }
 
-        public NotesResponseModel GetAllNotes()
+        public NotesResponseModel GetAllNotes(string searchString)
         {
             var response = new NotesResponseModel();
             var createdBy = _contextAccessor.HttpContext.User.Identity.Name;
             var notes = _unitOfWork.Note.GetAll(n => (n.IsDeleted == false)
                                             && (n.CreatedBy == createdBy));
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                notes = _unitOfWork.Note.GetAll(n => n.Title.Contains(searchString));
+            }
+
             if (notes.Count == 0)
             {
                 response.Message = "No Records Found ";
@@ -155,7 +162,7 @@ namespace NoteApp.Services.Implementation
         public BaseResponseModel UpdateNote(string id, UpdateNoteViewModel model)
         {
             var response = new BaseResponseModel();
-            var noteExist = _unitOfWork.Note.Exists(n => (n.Id == id)  && (n.IsDeleted == false));
+            var noteExist = _unitOfWork.Note.Exists(n => (n.Id == id) && (n.IsDeleted == false));
             if (!noteExist)
             {
                 response.Message = "Note does not exist";

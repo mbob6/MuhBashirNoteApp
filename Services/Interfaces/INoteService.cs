@@ -10,6 +10,6 @@ namespace NoteApp.Services.Interfaces
         public BaseResponseModel UpdateNote(string id, UpdateNoteViewModel model);
         public BaseResponseModel DeleteNote(string id);
         public NoteResponseModel GetNote(string id);
-        public NotesResponseModel GetAllNotes();
+        public NotesResponseModel GetAllNotes(string searchString);
     }
 }

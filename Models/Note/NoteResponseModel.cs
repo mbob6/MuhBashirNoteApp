@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace NoteApp.Models.Note;
 
 public class NotesResponseModel : BaseResponseModel

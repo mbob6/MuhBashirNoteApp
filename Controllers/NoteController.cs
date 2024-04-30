@@ -12,6 +12,9 @@ namespace NoteApp.Controllers
     {
         private readonly INoteService _noteService;
         private readonly INotyfService _notyf;
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
         public NoteController(INoteService noteService, INotyfService notyf)
         {
             _noteService = noteService;
@@ -20,7 +23,7 @@ namespace NoteApp.Controllers
 
         public IActionResult Index()
         {
-            var notes = _noteService.GetAllNotes();
+            var notes = _noteService.GetAllNotes(SearchString);
             ViewData["Message"] = notes.Message;
             ViewData["Status"] = notes.Status;
 
@@ -59,6 +62,8 @@ namespace NoteApp.Controllers
             _notyf.Success(response.Message);
             return View(response.Data);
         }
+
+
 
         public IActionResult Update(string id)
         {
