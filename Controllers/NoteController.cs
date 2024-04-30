@@ -7,6 +7,7 @@ using NoteApp.Services.Interfaces;
 namespace NoteApp.Controllers
 {
     [Authorize]
+    [AllowAnonymous]
     public class NoteController : Controller
     {
         private readonly INoteService _noteService;
@@ -16,6 +17,7 @@ namespace NoteApp.Controllers
             _noteService = noteService;
             _notyf = notyf;
         }
+
         public IActionResult Index()
         {
             var notes = _noteService.GetAllNotes();

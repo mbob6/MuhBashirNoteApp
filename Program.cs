@@ -1,6 +1,7 @@
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using NoteApp.Context;
 using NoteApp.Repository.Implementation;
@@ -66,6 +67,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Login}/{id?}");
+    pattern: "{controller=Note}/{action=Index}/{id?}");
 
 app.Run();
