@@ -40,21 +40,22 @@
 </style>
 
 @* @{
-    var notes = new List<NoteApp.Models.Note.NoteViewModel>();
-    
+var notes = new List<NoteApp.Models.Note.NoteViewModel>();
+
 } *@
 
 @if (Model is not null)
 {
     <div class="table-container mt-5">
-        @* <form>
-            <p>
-                Title: <input type="text" asp-for="SearchString" />
-                <input type="submit" value="Filter" />
-            </p>
-        </form> *@
 
         <div class="table-container">
+            <form asp-controller="Note" asp-action="Index">
+                <p>
+                    Title: <input type="text" name="SearchString" />
+                    <input type="submit" value="Filter" />
+                </p>
+            </form>
+
             <table class="table">
                 <thead>
                     <tr>

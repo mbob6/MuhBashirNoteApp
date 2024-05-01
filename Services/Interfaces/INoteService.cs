@@ -1,4 +1,5 @@
-﻿using NoteApp.Models;
+﻿using NoteApp.Entities;
+using NoteApp.Models;
 using NoteApp.Models.Note;
 using NoteApp.Models.Role;
 
@@ -10,6 +11,7 @@ namespace NoteApp.Services.Interfaces
         public BaseResponseModel UpdateNote(string id, UpdateNoteViewModel model);
         public BaseResponseModel DeleteNote(string id);
         public NoteResponseModel GetNote(string id);
+        // public NotesResponseModel SearchNotes(string searchString);
         public NotesResponseModel GetAllNotes(string searchString);
     }
 }

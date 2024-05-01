@@ -21,9 +21,9 @@ namespace NoteApp.Controllers
             _notyf = notyf;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            var notes = _noteService.GetAllNotes(SearchString);
+            var notes = _noteService.GetAllNotes(searchString);
             ViewData["Message"] = notes.Message;
             ViewData["Status"] = notes.Status;
 
@@ -63,7 +63,14 @@ namespace NoteApp.Controllers
             return View(response.Data);
         }
 
+        // public IActionResult SearchNote(string searchString)
+        // {
+        //     var notes = _noteService.SearchNotes(searchString);
+        //     ViewData["Message"] = notes.Message;
+        //     ViewData["Status"] = notes.Status;
 
+        //     return View(notes.Data);
+        // }
 
         public IActionResult Update(string id)
         {
