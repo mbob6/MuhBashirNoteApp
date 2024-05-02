@@ -160,50 +160,6 @@ namespace NoteApp.Services.Implementation
             }
         }
 
-        // public NotesResponseModel SearchNotes(string searchString)
-        // {
-        //     var response = new NotesResponseModel();
-        //     var createdBy = _contextAccessor.HttpContext.User.Identity.Name;
-
-        //     if (!string.IsNullOrEmpty(searchString))
-        //     {
-        //         var notes = _unitOfWork.Note.GetAll(n => n.Title.Contains(searchString));
-
-
-        //         if (notes.Count == 0)
-        //         {
-        //             response.Message = "No Records Found ";
-        //             return response;
-        //         }
-
-        //         try
-        //         {
-        //             response.Data = notes.Select(n => new NoteViewModel
-        //             {
-        //                 Id = n.Id,
-        //                 Title = n.Title,
-        //                 Content = n.Content,
-        //                 DateCreated = n.DateCreated,
-        //                 DateUpdated = n.DateUpdated
-        //             }).ToList();
-        //             response.Message = "Notes Successfully retrieved";
-        //             response.Status = true;
-        //             return response;
-        //         }
-        //         catch (Exception ex)
-        //         {
-        //             response.Message = $"An error occured : {ex.Message}";
-        //             return response;
-        //         }
-
-        //     }
-        //     else
-        //     {
-        //         response.Message = "Search String is empty";
-        //         return response;
-        //     }         
-        // }
-
         public BaseResponseModel UpdateNote(string id, UpdateNoteViewModel model)
         {
             var response = new BaseResponseModel();

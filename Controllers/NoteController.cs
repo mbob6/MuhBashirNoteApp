@@ -63,15 +63,6 @@ namespace NoteApp.Controllers
             return View(response.Data);
         }
 
-        // public IActionResult SearchNote(string searchString)
-        // {
-        //     var notes = _noteService.SearchNotes(searchString);
-        //     ViewData["Message"] = notes.Message;
-        //     ViewData["Status"] = notes.Status;
-
-        //     return View(notes.Data);
-        // }
-
         public IActionResult Update(string id)
         {
             var response = _noteService.GetNote(id);
