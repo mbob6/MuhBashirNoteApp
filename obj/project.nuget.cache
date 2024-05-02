@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v7YGGKiV3pcXLLMTXDXdAkLQMrr38Bzxbd9e4OFbGCd9OEosLqzuVTFSbZ9BHL4mbWgjTAYRDq0woapVfl+3vw==",
+  "dgSpecHash": "ArdMwrYkPCtoMjXTvWMCS6wk6CO86P27rj27CSNjNpfMzymStdZ4VtQcJdbR1E/M4mAhWV2WJ722pVNxilw+RQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\ClonedFromGitHub\\MuhBashirNoteApp\\NoteApp.csproj",
+  "projectFilePath": "C:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\MuhBashirNoteApp\\NoteApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muhba\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\muhba\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",

@@ -9397,11 +9397,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\ClonedFromGitHub\\MuhBashirNoteApp\\NoteApp.csproj",
+      "projectUniqueName": "C:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\MuhBashirNoteApp\\NoteApp.csproj",
       "projectName": "NoteApp",
-      "projectPath": "c:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\ClonedFromGitHub\\MuhBashirNoteApp\\NoteApp.csproj",
+      "projectPath": "C:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\MuhBashirNoteApp\\NoteApp.csproj",
       "packagesPath": "C:\\Users\\muhba\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\ClonedFromGitHub\\MuhBashirNoteApp\\obj\\",
+      "outputPath": "C:\\Users\\muhba\\OneDrive\\Desktop\\C#Projects\\MuhBashirNoteApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\muhba\\AppData\\Roaming\\NuGet\\NuGet.Config"

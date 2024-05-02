@@ -3,31 +3,6 @@
     ViewData["Title"] = "Create New Note";
 }
 
-<!--<div class="body">
-
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Create a Note</h5>
-            </div>
-            <div class="card-body">
-                <form asp-action="Create">
-                    <div class="form-group">
-                        <label asp-for="Title">Title</label>
-                        <input type="text" class="form-control" id="noteTitle" placeholder="Enter Title" asp-for="Title">
-                        <span asp-validation-for="Title" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Content">Content</label>
-                        <textarea class="form-control" rows="15" asp-for="Content" placeholder="Enter the note content"></textarea>
-                        <span asp-validation-for="Content" class="text-danger"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-3">Create</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>-->
 <style>
     .notebook-lines {
         background-color: #f8f9fa;
@@ -53,7 +28,7 @@
             <span asp-validation-for="Title" class="text-danger"></span>
             <div class="notebook-lines">
                 <label asp-for="Content">Content</label>
-                <textarea rows ="15" asp-for="Content" placeholder="Start typing your note..."></textarea>
+                <textarea rows ="15" asp-for="Content" placeholder="Start typing your note..." id="noteContent"></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
 
@@ -66,11 +41,11 @@
             else
             {
                 <div class="text-center mt-4">
-                    <button class="btn btn-primary" asp-controller="Home" asp-action="Login" >Login to Save Note</button>
+                    <button class="btn btn-primary" asp-controller="Home" asp-action="Login" id="loginSave">Login to Save Note</button>
                 </div>
 
                 <div class="text-center mt-4">
-                    <button class="btn btn-primary" asp-controller="Home" asp-action="SignUp" >Sign Up to Save Note</button>
+                    <button class="btn btn-primary" asp-controller="Home" asp-action="SignUp" id="signupSave">Sign Up to Save Note</button>
                 </div>
             }
             
@@ -80,6 +55,44 @@
         </form>
     </div>
 </div>
+
+<script>
+ /* var isLoggedIn = '@User.Identity.IsAuthenticated' === 'True';
+  if (isLoggedIn) {
+    // User is signed in
+  } else {
+    // User is not signed in
+  }*/
+    var note = {
+           title: document.getElementById("noteTitle").value,
+           content: document.getElementById("noteContent").value
+    };
+
+    var loginSave = document.getElementById("loginSave");
+    var signupSave = document.getElementById("signupSave");
+    var isLoggedIn = '@User.Identity.IsAuthenticated' === 'True';
+
+    loginSave.addEventListener("click", saveNote);
+    signupSave.addEventListener("click", saveNote);
+
+    if(isLoggedIn)
+    {
+        retrieveNote();
+    }
+
+    function saveNote() {
+        localStorage.setItem("note", JSON.stringify(note));         
+    } 
+
+    function retrieveNote() {
+        var note = JSON.parse(localStorage.getItem("note"));
+        document.getElementById("noteTitle").value = note.title;
+        document.getElementById("noteContent").value = note.content;
+
+        localStorage.removeItem("note");
+    };
+
+</script>
 
 @*@section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")

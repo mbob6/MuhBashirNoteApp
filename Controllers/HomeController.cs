@@ -77,7 +77,7 @@ namespace NoteApp.Controllers
             {
                 return RedirectToAction("AdminDashboard", "Home");
             }
-            return RedirectToAction("Index", "Note");
+            return RedirectToAction("Create", "Note");
         }
         public IActionResult LogOut()
         {
